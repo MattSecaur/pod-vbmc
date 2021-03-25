@@ -1,3 +1,11 @@
+To install on a RHEL8/CentOS8 KVM hypervisor:
+
+dnf install -v git podman ipmitool
+git clone https://github.com/MattSecaur/pod-vbmc.git
+cd pod-vbmc
+./build.sh
+./run.sh
+
 podman exec -ti \
 	pod-vbmc vbmc add \
 	--username admin --password password --port 6231 \
