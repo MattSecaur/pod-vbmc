@@ -29,4 +29,3 @@ ENTRYPOINT ["/usr/local/bin/vbmc.sh"]
 
 # Set a default command useful for debugging
 #CMD ["/bin/bash", "--login"]
-
