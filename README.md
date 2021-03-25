@@ -8,4 +8,6 @@ podman exec -ti pod-vbmc vbmc start overcloud-ceph-0
 
 podman exec -ti pod-vbmc vbmc list
 
+ipmitool -I lanplus -U admin -P password -H 192.168.122.1 -p 6231 power on
+
 podman ps -q --filter name=pod-vbmc
