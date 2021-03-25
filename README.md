@@ -1,9 +1,11 @@
-docker exec -ti \
-	krynn-vbmc vbmc add \
+podman exec -ti \
+	pod-vbmc vbmc add \
 	--username admin --password password --port 6231 \
 	--address 192.168.122.1 \
 	--libvirt-uri qemu:///system  overcloud-ceph-0
 
-docker ps -q --filter name=krynn-vbmc
+podman exec -ti pod-vbmc vbmc start overcloud-ceph-0
 
-docker exec -ti krynn-vbmc vbmc list
+podman exec -ti pod-vbmc vbmc list
+
+podman ps -q --filter name=pod-vbmc
