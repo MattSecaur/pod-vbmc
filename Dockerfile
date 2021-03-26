@@ -1,24 +1,16 @@
-FROM python:3.6
+FROM centos:8
 LABEL description="virtual BMC" version="1.6"
 MAINTAINER msecaur@redhat.com
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV container docker
-
-RUN apt-get update --fix-missing
+RUN dnf -y update
 
 # Setup
 USER root
 
 # Packages
-RUN apt-get install -y libvirt-dev ipmitool python python-setuptools python-six python-cryptography libvirt0
-RUN apt-get install -y python-pip pkg-config libvirt-dev
-RUN apt-get clean
-RUN pip install virtualbmc
-
-RUN rm -Rf /var/lib/apt/lists/*
-RUN rm -Rf /var/cache/apt/archives/*.deb
-RUN rm -Rf /var/cache/apt/archives/partial/*
+RUN yum install -y python3-pip python3-libvirt && dnf clean all
+RUN pip3 install -U pip setuptools
+RUN pip3 install virtualbmc
 
 ENV PATH="/usr/local/bin:${PATH}"
 

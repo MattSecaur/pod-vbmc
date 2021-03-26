@@ -1,4 +1,4 @@
 #!/bin/sh
 
 IMAGE_NAME=pod-vbmc
-podman build -t ${IMAGE_NAME} .
+podman build --squash-all -t ${IMAGE_NAME} .
