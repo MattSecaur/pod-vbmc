@@ -1,4 +1,4 @@
-FROM centos:8
+FROM fedora:latest
 LABEL description="virtual BMC" version="1.6"
 MAINTAINER msecaur@redhat.com
 
