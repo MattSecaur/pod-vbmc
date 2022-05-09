@@ -1,5 +1,5 @@
 FROM fedora:latest
-LABEL description="virtual BMC" version="1.6"
+LABEL description="virtual BMC" version="1.7"
 MAINTAINER msecaur@redhat.com
 
 RUN dnf -y update
